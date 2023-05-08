@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {useNavigate, useLocation} from 'react-router-dom';
 import { useEffect, useState } from "react";
@@ -16,7 +15,6 @@ export default function Menu () {
     const [selecionado, setSelecionado] = useState('');
 
     const links: Links[] = [
-        {label: 'Lotofácil', url:'/lotofacil', cor: 'roxo'},
         {label: 'Megasena', url:'/megasena', cor: 'verde'},
         {label: 'Quina', url:'/quina', cor:'azul-escuro'}
     ]
@@ -28,7 +26,7 @@ export default function Menu () {
     }
 
     useEffect(() => {
-        setSelecionado(loc.pathname == '/' ? '/lotofacil' : loc.pathname);
+        setSelecionado(loc.pathname == '/' ? '/megasena' : loc.pathname);
     }, []);
     return(
         <List>
