@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import Megasena from "./pages/Megasena";
-import Lotofacil from "./pages/Lotofacil";
-import Quina from "./pages/Quina";
-import Menu from "./components/Menu";
+import Megasena from "../pages/Megasena";
+import Lotofacil from "../pages/Lotofacil";
+import Quina from "../pages/Quina";
+import Menu from "../components/Menu";
 
 export default function AppRouter () {
     
