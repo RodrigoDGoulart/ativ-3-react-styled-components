@@ -1,12 +1,7 @@
 import styled from "styled-components"
 import { PropsNumero } from "../../../types";
 
-export function Numero({ numero, cor }: PropsNumero) {
-  const cores = {
-    'verde': '#209869',
-    'azul-escuro': '#260085'
-  }
-
+export function Numero({ numero }: PropsNumero) {
   const SpanSld = styled.div`
         background-color: ${props => props.theme.bola};
         color: ${props => props.theme.bolafonte};
