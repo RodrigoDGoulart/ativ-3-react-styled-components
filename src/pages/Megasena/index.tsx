@@ -10,16 +10,10 @@ import { LoteriaProps } from "../../types";
 import { Carregando } from "../../components/Carregando";
 import NomeLoteria from "../../components/NomeLoteria";
 import Estimativa from "../../components/Estimativa";
+import Acumulou from "../../components/Acumulou";
 
 export default function Megasena() {
   const { megasena } = useContexto();
-
-  const acumulou = (sena: LoteriaProps) => {
-    if (sena.acumulado) {
-      return 'ACUMULOU!';
-    }
-    return `${sena.quantidadeGanhadores} ${sena.quantidadeGanhadores > 1 ? 'GANHADORES' : 'GANHADOR'}`
-  }
 
   return (
     <>
@@ -32,11 +26,9 @@ export default function Megasena() {
               <Estimativa jogo={megasena} />
             </LeftStl>
             <RightStl>
-              <Resultado cor="verde" lista={megasena.dezenas} />
+              <Resultado lista={megasena.dezenas} />
               <GanhadoresStl>
-                <Titulo cor="azul" tamanho="grande">
-                  {acumulou(megasena)}
-                </Titulo>
+                <Acumulou ganhadores={megasena.quantidadeGanhadores}  />
               </GanhadoresStl>
               <GanhadoresStl>
                 <Descricao>{`Concurso ${megasena.numeroDoConcurso} - ${megasena.dataPorExtenso}`}</Descricao>
