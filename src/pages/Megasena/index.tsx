@@ -13,6 +13,7 @@ import Estimativa from "../../components/Estimativa";
 import Acumulou from "../../components/Acumulou";
 import Data from "../../components/Data";
 import Esquerda from "../../components/Esquerda";
+import Direita from "../../components/Direita";
 
 export default function Megasena() {
   const { megasena } = useContexto();
@@ -24,15 +25,7 @@ export default function Megasena() {
           <ResultadoStl>
             {/* megasena */}
             <Esquerda jogo={megasena} />
-            <RightStl>
-              <Resultado lista={megasena.dezenas} />
-              <GanhadoresStl>
-                <Acumulou ganhadores={megasena.quantidadeGanhadores}  />
-              </GanhadoresStl>
-              <GanhadoresStl>
-                <Data jogo={megasena} />
-              </GanhadoresStl>
-            </RightStl>
+            <Direita jogo={megasena} />
           </ResultadoStl>
           <DivisoriaStl><Divisoria /></DivisoriaStl>
         </> :
