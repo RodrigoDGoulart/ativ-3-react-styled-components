@@ -28,6 +28,16 @@ export default function Menu() {
   
   useEffect(() => {
     setSelecionado(loc.pathname == '/' ? '/megasena' : loc.pathname);
+    switch(loc.pathname) {
+      case '/megasena':
+        setTema(mega);
+        break;
+      case '/quina':
+        setTema(quina);
+        break;
+      default:
+        setTema(mega);
+    }
   }, []);
   return (
     <List>
