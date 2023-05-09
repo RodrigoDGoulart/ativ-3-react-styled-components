@@ -27,10 +27,7 @@ export default function Megasena() {
           <ResultadoStl>
             {/* megasena */}
             <LeftStl>
-              <NomeLoteria
-              logo={TrevoMegaSena}
-              titulo="Megasena"
-              />
+              <NomeLoteria />
               <LeftContentStl>
                 <Descricao>
                   {`Estimativa de prêmio do próximo concurso. Sorteio em: ${megasena.dataProximoConcurso}`}
