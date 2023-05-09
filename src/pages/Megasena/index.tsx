@@ -9,6 +9,7 @@ import { useContexto } from "../../hooks";
 import { LoteriaProps } from "../../types";
 import { Carregando } from "../../components/Carregando";
 import NomeLoteria from "../../components/NomeLoteria";
+import Estimativa from "../../components/Estimativa";
 
 export default function Megasena() {
   const { megasena } = useContexto();
@@ -28,16 +29,7 @@ export default function Megasena() {
             {/* megasena */}
             <LeftStl>
               <NomeLoteria />
-              <LeftContentStl>
-                <Descricao>
-                  {`Estimativa de prêmio do próximo concurso. Sorteio em: ${megasena.dataProximoConcurso}`}
-                </Descricao>
-                <ValorStl>
-                  <Titulo cor="verde" tamanho="medio">
-                    {`R$${numeral(megasena.valorEstimadoProximoConcurso).format('0,0.00')}`}
-                  </Titulo>
-                </ValorStl>
-              </LeftContentStl>
+              <Estimativa jogo={megasena} />
             </LeftStl>
             <RightStl>
               <ListaNumeros cor="verde" lista={megasena.dezenas} />
