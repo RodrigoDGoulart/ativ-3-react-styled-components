@@ -4,61 +4,61 @@ import { Titulo } from "../../components/Titulo";
 import numeral from "numeral";
 import { Descricao } from "../../components/Descricao";
 import { Divisoria } from "../../components/Divisoria";
-import { ListaNumeros } from "../../components/ListaNumerosMegaSena";
+import { Resultado } from "../../components/Resultado";
 import { useContexto } from "../../hooks";
 import { LoteriaProps } from "../../types";
 import { Carregando } from "../../components/Carregando";
 
 export default function Quina() {
-    const { quina } = useContexto();
+  const { quina } = useContexto();
 
-    const acumulou = (sena: LoteriaProps) => {
-        if (sena.acumulado) {
-            return 'ACUMULOU!';
-        }
-        return `${sena.quantidadeGanhadores} ${sena.quantidadeGanhadores > 1 ? 'GANHADORES' : 'GANHADOR'}`
+  const acumulou = (sena: LoteriaProps) => {
+    if (sena.acumulado) {
+      return 'ACUMULOU!';
     }
+    return `${sena.quantidadeGanhadores} ${sena.quantidadeGanhadores > 1 ? 'GANHADORES' : 'GANHADOR'}`
+  }
 
-    return (
-        <>
-            {
-                quina.dataApuracao ? <>
-                    <ResultadoStl>
-                        {/* megasena */}
-                        <LeftStl>
-                            <TituloStl>
-                                <LogoStl src={TrevoQuina} alt='Mega-sena' />
-                                <Titulo cor="azul-escuro" tamanho="grande">Quina</Titulo>
-                            </TituloStl>
-                            <LeftContentStl>
-                                <Descricao>
-                                    {`Estimativa de prêmio do próximo concurso. Sorteio em: ${quina.dataProximoConcurso}`}
-                                </Descricao>
-                                <ValorStl>
-                                    <Titulo cor="azul-escuro" tamanho="medio">
-                                        {`R$${numeral(quina.valorEstimadoProximoConcurso).format('0,0.00')}`}
-                                    </Titulo>
-                                </ValorStl>
-                            </LeftContentStl>
-                        </LeftStl>
-                        <RightStl>
-                            <ListaNumeros cor="azul-escuro" lista={quina.dezenas} />
-                            <GanhadoresStl>
-                                <Titulo cor="azul" tamanho="grande">
-                                    {acumulou(quina)}
-                                </Titulo>
-                            </GanhadoresStl>
-                            <GanhadoresStl>
-                                <Descricao>{`Concurso ${quina.numeroDoConcurso} - ${quina.dataPorExtenso}`}</Descricao>
-                            </GanhadoresStl>
-                        </RightStl>
-                    </ResultadoStl>
-                    <DivisoriaStl><Divisoria /></DivisoriaStl>
-                </> :
-                    <Carregando />
-            }
-        </>
-    )
+  return (
+    <>
+      {
+        quina.dataApuracao ? <>
+          <ResultadoStl>
+            {/* megasena */}
+            <LeftStl>
+              <TituloStl>
+                <LogoStl src={TrevoQuina} alt='Mega-sena' />
+                <Titulo cor="azul-escuro" tamanho="grande">Quina</Titulo>
+              </TituloStl>
+              <LeftContentStl>
+                <Descricao>
+                  {`Estimativa de prêmio do próximo concurso. Sorteio em: ${quina.dataProximoConcurso}`}
+                </Descricao>
+                <ValorStl>
+                  <Titulo cor="azul-escuro" tamanho="medio">
+                    {`R$${numeral(quina.valorEstimadoProximoConcurso).format('0,0.00')}`}
+                  </Titulo>
+                </ValorStl>
+              </LeftContentStl>
+            </LeftStl>
+            <RightStl>
+              <Resultado cor="azul-escuro" lista={quina.dezenas} />
+              <GanhadoresStl>
+                <Titulo cor="azul" tamanho="grande">
+                  {acumulou(quina)}
+                </Titulo>
+              </GanhadoresStl>
+              <GanhadoresStl>
+                <Descricao>{`Concurso ${quina.numeroDoConcurso} - ${quina.dataPorExtenso}`}</Descricao>
+              </GanhadoresStl>
+            </RightStl>
+          </ResultadoStl>
+          <DivisoriaStl><Divisoria /></DivisoriaStl>
+        </> :
+          <Carregando />
+      }
+    </>
+  )
 }
 
 const ResultadoStl = styled.div`
