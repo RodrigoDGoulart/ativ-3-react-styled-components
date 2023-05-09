@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Numero } from "./NumeroMegaSena";
+import { Numero } from "./Numero";
 import { PropsListaNumeros } from "../../types";
 
 export function Resultado({ lista, cor }: PropsListaNumeros) {

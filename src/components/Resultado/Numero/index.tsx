@@ -9,7 +9,7 @@ export function Numero({ numero, cor }: PropsNumero) {
 
   const SpanSld = styled.div`
         background-color: ${props => props.theme.bola};
-        color: white;
+        color: ${props => props.theme.bolafonte};
         width: 48px;
         height: 48px;
         border-radius: 24px;
