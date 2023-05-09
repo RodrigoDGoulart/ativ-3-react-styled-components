@@ -7,6 +7,19 @@ interface Props {
 }
 
 export default function NomeLoteria(props: Props) {
+  
+  const TituloStl = styled.span`
+      display: flex;
+      align-items: center;
+      padding: 0;
+      height: 48px;
+      margin-bottom: 20px;
+  `;
+  
+  const LogoStl = styled.img`
+      margin-right: 12px
+  `;
+
   return (
     <TituloStl>
       <LogoStl src={props.logo} />
@@ -14,15 +27,3 @@ export default function NomeLoteria(props: Props) {
     </TituloStl>
   );
 }
-
-const TituloStl = styled.span`
-    display: flex;
-    align-items: center;
-    padding: 0;
-    height: 48px;
-    margin-bottom: 20px;
-`;
-
-const LogoStl = styled.img`
-    margin-right: 12px
-`;

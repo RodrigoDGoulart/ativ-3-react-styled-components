@@ -38,11 +38,26 @@ interface LoteriaProps {
     valorPremio: number
 }
 
+interface TemaProps {
+  acumulou: string;
+  data: string;
+  estimativa: string;
+  loteria: string;
+  bola: string;
+  bolafonte: string;
+}
+
+interface TemaContext {
+  setTema: React.Dispatch<React.SetStateAction<TemaProps>>
+}
+
 export type {
     PropsNumero,
     PropsListaNumeros,
     PropsTitulo,
     PropsDescricao,
     LoteriaContextProps,
-    LoteriaProps
+    LoteriaProps,
+    TemaProps,
+    TemaContext
 };
