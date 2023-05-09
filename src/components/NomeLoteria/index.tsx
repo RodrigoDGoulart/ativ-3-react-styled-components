@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import megasena from '../../assets/trevo-megasena.png';
 import quina from '../../assets/trevo-quina.png';
+import timemania from '../../assets/trevo-timemania.png';
 import { useLocation } from "react-router-dom";
 
 interface Props {
@@ -42,6 +43,10 @@ export default function NomeLoteria(props: Props) {
       case '/quina':
         setLogo(quina);
         setTitle('QUINA');
+        break;
+      case '/timemania':
+        setLogo(timemania);
+        setTitle('TIMEMANIA');
         break;
     }
   }

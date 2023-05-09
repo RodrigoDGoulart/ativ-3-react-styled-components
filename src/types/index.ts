@@ -20,8 +20,8 @@ interface PropsDescricao {
 
 interface LoteriaContextProps {
     megasena: LoteriaProps;
-    lotofacil: LoteriaProps;
     quina: LoteriaProps;
+    timemania: LoteriaProps;
 }
 
 interface LoteriaProps {
